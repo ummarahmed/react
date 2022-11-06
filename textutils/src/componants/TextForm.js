@@ -26,6 +26,8 @@ export default function TextForm(props) {
     // text = "new text Value"; // wrong way
     // setText("New Text updated"); // correct way
 
+    /*
+    // get selected text
     function getSel(boxId)
     {
         var txtarea = document.getElementById(boxId);
@@ -34,8 +36,11 @@ export default function TextForm(props) {
         var sel = txtarea.value.substring(start, finish);
         return sel
     }
+    */
+
   return (
-    <div>
+    <>
+    <div className='container'>
         <h1>{props.heading}</h1>
         <div className="mb-3">
         <textarea className="form-control" value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
@@ -43,6 +48,14 @@ export default function TextForm(props) {
         <button className="btn btn-primary" onClick={handleUPClick}>UPPERCASE</button>
         <button className="btn btn-primary mx-3" onClick={handlelowerClick}>lowercase</button>
     </div>
+    <div className="container my-3">
+        <h2>Your text summary</h2>
+        <p><b>{text.split(' ').length}</b> words and <b>{text.length}</b> characters. <b>{(text.split(' ').length)*0.008}</b> minutes require to read the passage.</p>
+        <h2>Preview:</h2>
+        <p>{text}</p>
+    </div>
+
+    </>
   )
 }
 
