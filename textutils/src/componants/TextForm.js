@@ -30,7 +30,7 @@ export default function TextForm(props) {
         navigator.clipboard.writeText(newText);
     }
     const pasteText = ()=>{
-        let clipText =  navigator.clipboard.readText()
+        navigator.clipboard.readText()
         .then((pText)=>{
             //  return text;
              console.log("Clip Text: "+pText);
@@ -39,10 +39,8 @@ export default function TextForm(props) {
              
         })
         .catch((error)=>{
-            //  return ;
              console.log("error - no text");
         });
-        // console.log("Clip Text: "+clipText.text);
     }
     const clear = ()=>{
         setText("");
@@ -59,11 +57,11 @@ export default function TextForm(props) {
         <div className="mb-3">
         <textarea className="form-control" value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
         </div>
-        <button className="btn btn-primary mx-2" onClick={handleUPClick}>UPPERCASE</button>
-        <button className="btn btn-primary mx-2" onClick={handlelowerClick}>lowercase</button>
-        <button className='btn btn-primary mx-2' onClick={copyTextToClipboard}>Copy to clipboard</button>
-        <button className='btn btn-primary mx-2' onClick={pasteText}>Paste text</button>
-        <button className="btn btn-primary max-2" onClick={clear}>Clear</button>
+        <button className="btn btn-primary mx-2 my-2" onClick={handleUPClick}>UPPERCASE</button>
+        <button className="btn btn-primary mx-2 my-2" onClick={handlelowerClick}>lowercase</button>
+        <button className='btn btn-primary mx-2 my-2' onClick={copyTextToClipboard}>Copy to clipboard</button>
+        <button className='btn btn-primary mx-2 my-2' onClick={pasteText}>Paste text</button>
+        <button className="btn btn-primary max-2 my-2" onClick={clear}>Clear</button>
     </div>
     <div className="container my-3">
         <h2>Your text summary</h2>
