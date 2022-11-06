@@ -24,7 +24,7 @@ export default function Navbar(props) {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <a className="nav-link active" aria-current="page" href="/">
-                Home
+                {props.home}
               </a>
             </li>
             <li className="nav-item">
@@ -52,12 +52,14 @@ export default function Navbar(props) {
 
 Navbar.prototypes = { 
     title: PropTypes.string.isRequired,
-    aboutText: PropTypes.string.isRequired
+    aboutText: PropTypes.string.isRequired,
+    home: PropTypes.string.isRequired
      
 };
 
 Navbar.defaultProps = {
     title: "Title",
-    aboutText: "About"
+    aboutText: "About",
+    home: "Home"
 
 }
